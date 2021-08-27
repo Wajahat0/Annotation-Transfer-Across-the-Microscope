@@ -1,0 +1,41 @@
+librries required
+ 
+#pip install opencv-contrib-python==3.4.2
+-pandas
+-argparse
+-yattag
+
+
+#we have only annotation of 1000x of expensive microscope
+#how to transfer annotation across the micrscope
+#convert xmltocsv file using xml2csv.py code .
+
+python xml2csv.py --dir path_data_folder -s slide_number -r resolution (1000x,400x,100x)
+
+#Next transfer annonation from 1000x to 400x within microscope 
+  
+python annotation_transfer.py -h_d data_path_to_refrence_folder -l_d data data_path_to target_folder -s slide_name -m tranfer_mode (o2o,o2c,c2c) -d direaction i.e (1000xto400x,100xto100x)
+
+#this function will create a csv file in 400x folder of desired slide
+ 
+#to convert csv file to xml use the function below
+python csv2xml.py --dir path_data_folder -s slide number -r resolution (1000x,400x,100x)
+xml files will be created in that folder  
+
+These function are avaiable in this resporites
+##########
+xml2csv.py convert xml to csv
+
+##usage
+#python xml2csv.py --dir path_data_folder -s slide number -r resolution (1000x,400x,100x)
+ 
+##########
+
+##usage
+#python csv2xml.py --dir path_data_folder -s slide number -r resolution (1000x,400x,100x)
+
+
+
+#####
+
+python annotation_transfer.py -h_d data_path_to_refrence_folder -l_d data data_path_to target_folder -s slide_name -m tranfer_mode (o2o,o2c,c2c) -d direaction i.e (1000xto400x,100xto100x)
